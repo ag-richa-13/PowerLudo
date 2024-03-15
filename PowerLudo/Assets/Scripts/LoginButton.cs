@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class LoginButton : MonoBehaviour
 {
-    [SerializeField] private GameObject LoginPanel; // Corrected variable name
+    [SerializeField] private GameObject LoginPanel;
     [SerializeField] private GameObject FormPanel;
+    [SerializeField] private GameObject verificationPanel;
 
-    public void OnLoginButtonClick(){
+    public void OnLoginButtonClick()
+    {
         FormPanel.SetActive(true);
-        LoginPanel.SetActive(false); // Corrected variable name
+        LoginPanel.SetActive(false);
+        verificationPanel.SetActive(false);
     }
 }

@@ -8,24 +8,24 @@ public class LoadingBar : MonoBehaviour
 {
     [SerializeField] private Slider LoadBar;
     public int NextSceneIndex = 1;
-    float fillTime = 5f; // Total time to fill the progress bar
+    float fillTime = 5f;
     private float timer = 0f;
 
     public void Update()
     {
-        // Increment the timer
+
         timer += Time.deltaTime;
 
-        // Calculate progress
+
         float progress = timer / fillTime;
 
-        // Update progress bar
+
         LoadBar.value = progress;
 
-        // Check if progress is complete
+
         if (progress >= 1f)
         {
-            // Load next scene
+
             SceneManager.LoadScene(NextSceneIndex);
         }
     }
