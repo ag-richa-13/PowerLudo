@@ -11,7 +11,7 @@ public class LoadingBar : MonoBehaviour
     public float fillTime = 3f; // Total time to fill the progress bar
     private float timer = 0f;
 
-    void Update()
+    public void Update()
     {
         // Increment the timer
         timer += Time.deltaTime;
