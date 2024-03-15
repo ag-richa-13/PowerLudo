@@ -669,7 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadBar: {fileID: 584366641}
   NextSceneIndex: 1
-  fillTime: 3
+  fillTime: 5
 --- !u!4 &771620004
 Transform:
   m_ObjectHideFlags: 0

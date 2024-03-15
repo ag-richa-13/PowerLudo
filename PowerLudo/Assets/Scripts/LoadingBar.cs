@@ -8,7 +8,7 @@ public class LoadingBar : MonoBehaviour
 {
     [SerializeField] private Slider LoadBar;
     public int NextSceneIndex = 1;
-    public float fillTime = 3f; // Total time to fill the progress bar
+    float fillTime = 5f; // Total time to fill the progress bar
     private float timer = 0f;
 
     public void Update()
