@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class LoadingBar : MonoBehaviour
 {
     [SerializeField] private Slider LoadBar;
-    public int NextSceneIndex = 1;
+    private int NextSceneIndex = 1;
     float fillTime = 3f;
     private float timer = 0f;
 

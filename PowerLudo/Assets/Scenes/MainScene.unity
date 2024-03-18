@@ -5410,6 +5410,8 @@ RectTransform:
   - {fileID: 580735202}
   - {fileID: 2099688552}
   - {fileID: 1206935161}
+  - {fileID: 739865894}
+  - {fileID: 910220697}
   - {fileID: 162340791}
   - {fileID: 1295667887}
   - {fileID: 687887071}
@@ -5417,8 +5419,6 @@ RectTransform:
   - {fileID: 1331048458}
   - {fileID: 604701424}
   - {fileID: 762628757}
-  - {fileID: 910220697}
-  - {fileID: 739865894}
   m_Father: {fileID: 1966904367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -5476,6 +5476,7 @@ GameObject:
   - component: {fileID: 1437785772}
   - component: {fileID: 1437785774}
   - component: {fileID: 1437785775}
+  - component: {fileID: 1437785776}
   m_Layer: 0
   m_Name: AppManager
   m_TagString: Untagged
@@ -5525,10 +5526,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59254da4cbc87fa469bfc3e17c14f12f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loginPanel: {fileID: 306478361}
-  formPanel: {fileID: 1869966483}
+  LoginPanel: {fileID: 0}
+  FormPanel: {fileID: 0}
   verificationPanel: {fileID: 1966904366}
+  numberField: {fileID: 0}
   cardRectTransform: {fileID: 52481654}
+  userNumber: 
 --- !u!114 &1437785775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5543,6 +5546,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RegistrationPanel: {fileID: 306478361}
   formPanel: {fileID: 1869966483}
+--- !u!114 &1437785776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437785771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbe868f72b6d864b933a5aad0638c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FormPanel: {fileID: 1869966483}
+  verificationPanel: {fileID: 1966904366}
+  otpInputFields:
+  - {fileID: 162340792}
+  - {fileID: 1295667888}
+  - {fileID: 687887072}
+  - {fileID: 1301526185}
+  - {fileID: 1331048459}
+  - {fileID: 604701425}
+  text: {fileID: 739865895}
 --- !u!1 &1556794881
 GameObject:
   m_ObjectHideFlags: 0
