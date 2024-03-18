@@ -10,7 +10,7 @@ public class AndroidBackButton : MonoBehaviour
         // Check if the back button (Escape key) is pressed on Android
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            // If the form panel is active, switch to the login panel
+            // If the form panel is active, switch to the Registration panel
             if (formPanel.activeSelf)
             {
                 formPanel.SetActive(false);
@@ -18,7 +18,7 @@ public class AndroidBackButton : MonoBehaviour
             }
             else
             {
-                // If the login panel is active, quit the application
+                // If the Registration panel is active, quit the application
                 Application.Quit();
             }
         }

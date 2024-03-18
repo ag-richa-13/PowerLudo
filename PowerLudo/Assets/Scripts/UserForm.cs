@@ -3,13 +3,13 @@ using TMPro;
 
 public class UserForm : MonoBehaviour
 {
-    [SerializeField] private GameObject LoginPanel;
-    [SerializeField] private GameObject FormPanel;
+    [SerializeField] private GameObject loginPanel;
+    [SerializeField] private GameObject formPanel;
     [SerializeField] private GameObject verificationPanel;
-    [SerializeField] private TMP_InputField numberField;
     [SerializeField] private RectTransform cardRectTransform; // Reference to the card's RectTransform
 
-    private bool isKeyboardVisible = false;
+    private TouchScreenKeyboard keyboard;
+
     private Vector2 originalCardPosition;
 
     private void Start()
@@ -17,39 +17,14 @@ public class UserForm : MonoBehaviour
         // Store the original position of the card
         originalCardPosition = cardRectTransform.anchoredPosition;
 
-        numberField.keyboardType = TouchScreenKeyboardType.NumberPad;
-
-        // Subscribe to input field events
-        numberField.onSelect.AddListener(OnInputFieldSelect);
-        numberField.onDeselect.AddListener(OnInputFieldDeselect);
+        // Set the keyboard type to NumberPad
+        TouchScreenKeyboard.hideInput = true;
     }
 
-    private void OnInputFieldSelect(string text)
+    private void Update()
     {
-        isKeyboardVisible = true;
-        AdjustCardPosition();
-    }
-
-    private void OnInputFieldDeselect(string text)
-    {
-        isKeyboardVisible = false;
-        AdjustCardPosition();
-    }
-
-    private void AdjustCardPosition()
-    {
-        if (isKeyboardVisible)
-        {
-            // Get the height of the keyboard
-            float keyboardHeight = TouchScreenKeyboard.area.height;
-
-            // Calculate the amount by which to shift the card panel
-            float shiftAmount = keyboardHeight + (cardRectTransform.rect.height / 1.23f);
-
-            // Set the position of the card panel
-            cardRectTransform.anchoredPosition = new Vector2(cardRectTransform.anchoredPosition.x, originalCardPosition.y + shiftAmount);
-        }
-        else
+        // Check if the keyboard is visible
+        if (keyboard != null && !keyboard.active)
         {
             // Reset card panel position when keyboard is hidden
             cardRectTransform.anchoredPosition = originalCardPosition;
@@ -58,18 +33,15 @@ public class UserForm : MonoBehaviour
 
     public void OnSubmitButtonClick()
     {
-        string phoneNumber = numberField.text;
+        // Show verification panel
+        verificationPanel.SetActive(true);
+        loginPanel.SetActive(false);
+        formPanel.SetActive(false);
+    }
 
-        if (!string.IsNullOrEmpty(phoneNumber))
-        {
-            Debug.Log("OTP Sent successfully on your Registered Number.");
-            verificationPanel.SetActive(true);
-            LoginPanel.SetActive(false);
-            FormPanel.SetActive(false);
-        }
-        else
-        {
-            Debug.Log("Please enter a valid mobile number!");
-        }
+    public void OnInputFieldSelect()
+    {
+        // Show the keyboard when input field is selected
+        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.NumberPad);
     }
 }
