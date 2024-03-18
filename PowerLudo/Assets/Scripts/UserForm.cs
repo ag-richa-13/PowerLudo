@@ -3,16 +3,16 @@ using TMPro;
 
 public class UserForm : MonoBehaviour
 {
+
+    private VerifyOTP verifyOTP;
     [SerializeField] private GameObject LoginPanel;
     [SerializeField] private GameObject FormPanel;
     [SerializeField] private GameObject verificationPanel;
     [SerializeField] private TMP_InputField numberField;
     [SerializeField] private RectTransform cardRectTransform; // Reference to the card's RectTransform
-
+    public string userNumber;
     private bool isKeyboardVisible = false;
     private Vector2 originalCardPosition;
-
-    public string userNumber;
 
     private void Start()
     {
@@ -46,7 +46,7 @@ public class UserForm : MonoBehaviour
             float keyboardHeight = TouchScreenKeyboard.area.height;
 
             // Calculate the amount by which to shift the card panel
-            float shiftAmount = keyboardHeight + (cardRectTransform.rect.height / 1.23f);
+            float shiftAmount = keyboardHeight + (cardRectTransform.rect.height / 1.5f);
 
             // Set the position of the card panel
             cardRectTransform.anchoredPosition = new Vector2(cardRectTransform.anchoredPosition.x, originalCardPosition.y + shiftAmount);
@@ -70,6 +70,8 @@ public class UserForm : MonoBehaviour
             FormPanel.SetActive(false);
 
             userNumber = phoneNumber;
+
+            verifyOTP.numberText.text = userNumber;
         }
         else
         {

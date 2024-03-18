@@ -7,19 +7,33 @@ using UnityEngine.SceneManagement;
 
 public class VerifyOTP : MonoBehaviour
 {
-    private UserForm userForm;
+
     [SerializeField] private GameObject FormPanel;
     [SerializeField] private GameObject verificationPanel;
     [SerializeField] private TMP_InputField[] otpInputFields;
-    [SerializeField] private TMP_Text text;
+    public TMP_Text numberText;
+    [SerializeField] private RectTransform cardRectTransform;
     private int NextSceneIndex = 2;
 
     private const int OTP_LENGTH = 6; // Length of OTP
-
+    private bool isKeyboardVisible = false;
+    private Vector2 originalCardPosition;
     private void Start()
     {
-        text.text = $"{userForm.userNumber}";
+        // Store the original position of the card
+        originalCardPosition = cardRectTransform.anchoredPosition;
+
+        // Set keyboard type for each input field in the array
+        foreach (TMP_InputField inputField in otpInputFields)
+        {
+            inputField.keyboardType = TouchScreenKeyboardType.NumberPad;
+
+            // Subscribe to input field events
+            inputField.onSelect.AddListener(OnInputFieldSelect);
+            inputField.onDeselect.AddListener(OnInputFieldDeselect);
+        }
     }
+
 
     public void OnVerifyButtonClick()
     {
@@ -39,7 +53,7 @@ public class VerifyOTP : MonoBehaviour
             if (enteredOTP == staticOTP)
             {
                 Debug.Log("OTP verified successfully!");
-                SceneManager.LoadScene(NextSceneIndex);
+                SceneManager.LoadSceneAsync(NextSceneIndex);
             }
             else
             {
@@ -57,5 +71,38 @@ public class VerifyOTP : MonoBehaviour
     {
         FormPanel.SetActive(true);
         verificationPanel.SetActive(false);
+    }
+
+
+    private void OnInputFieldSelect(string text)
+    {
+        isKeyboardVisible = true;
+        AdjustCardPosition();
+    }
+
+    private void OnInputFieldDeselect(string text)
+    {
+        isKeyboardVisible = false;
+        AdjustCardPosition();
+    }
+
+    private void AdjustCardPosition()
+    {
+        if (isKeyboardVisible)
+        {
+            // Get the height of the keyboard
+            float keyboardHeight = TouchScreenKeyboard.area.height;
+
+            // Calculate the amount by which to shift the card panel
+            float shiftAmount = keyboardHeight + (cardRectTransform.rect.height / 1.5f);
+
+            // Set the position of the card panel
+            cardRectTransform.anchoredPosition = new Vector2(cardRectTransform.anchoredPosition.x, originalCardPosition.y + shiftAmount);
+        }
+        else
+        {
+            // Reset card panel position when keyboard is hidden
+            cardRectTransform.anchoredPosition = originalCardPosition;
+        }
     }
 }
