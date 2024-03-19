@@ -27,9 +27,12 @@ public class VerificationController : MonoBehaviour
         WelcomePanel.SetActive(true);
         AuthPanel.SetActive(false);
         VerificationPanel.SetActive(false);
-        // timerText.gameObject.SetActive(false); // Hide timer text initially
-        // secText.gameObject.SetActive(false);
-        // ResendButton.gameObject.SetActive(false); // Hide resend button initially
+
+        // Add listener to each OTP input field for cursor iteration
+        foreach (TMP_InputField inputField in otpInputFields)
+        {
+            inputField.onValueChanged.AddListener(delegate { OnInputValueChanged(inputField); });
+        }
     }
 
     private void Update()
@@ -84,7 +87,6 @@ public class VerificationController : MonoBehaviour
             else
             {
                 Debug.Log("Incorrect OTP! Please try again.");
-                // Optionally, you can clear the input fields here for the user to enter OTP again
                 StartResendTimer();
             }
         }
@@ -116,4 +118,22 @@ public class VerificationController : MonoBehaviour
         isTimerRunning = true;
         UpdateTimerText();
     }
+
+    private void OnInputValueChanged(TMP_InputField currentInputField)
+    {
+        // Find the index of the current input field
+        int currentIndex = System.Array.IndexOf(otpInputFields, currentInputField);
+
+        // If the current input field is not the last one and its length is equal to 1, move focus to the next input field
+        if (currentIndex < otpInputFields.Length - 1 && currentInputField.text.Length == 1)
+        {
+            TMP_InputField nextInputField = otpInputFields[currentIndex + 1];
+            nextInputField.Select();
+            nextInputField.ActivateInputField();
+
+            // Deselect the current input field to prevent the keyboard from opening automatically
+            currentInputField.DeactivateInputField();
+        }
+    }
+
 }
