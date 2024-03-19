@@ -1,31 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UserForm : MonoBehaviour
+public class VeriFicationUIManager : MonoBehaviour
 {
-
-    private VerifyOTP verifyOTP;
-    [SerializeField] private GameObject LoginPanel;
-    [SerializeField] private GameObject FormPanel;
-    [SerializeField] private GameObject verificationPanel;
-    [SerializeField] private TMP_InputField numberField;
-    [SerializeField] private RectTransform cardRectTransform; // Reference to the card's RectTransform
-    public string userNumber;
+    [SerializeField] private TMP_InputField[] otpInputFields;
+    [SerializeField] private RectTransform cardRectTransform;
     private bool isKeyboardVisible = false;
     private Vector2 originalCardPosition;
-
     private void Start()
     {
         // Store the original position of the card
         originalCardPosition = cardRectTransform.anchoredPosition;
 
-        numberField.keyboardType = TouchScreenKeyboardType.NumberPad;
+        // Set keyboard type for each input field in the array
+        foreach (TMP_InputField inputField in otpInputFields)
+        {
+            inputField.keyboardType = TouchScreenKeyboardType.NumberPad;
 
-        // Subscribe to input field events
-        numberField.onSelect.AddListener(OnInputFieldSelect);
-        numberField.onDeselect.AddListener(OnInputFieldDeselect);
+            // Subscribe to input field events
+            inputField.onSelect.AddListener(OnInputFieldSelect);
+            inputField.onDeselect.AddListener(OnInputFieldDeselect);
+        }
     }
-
     private void OnInputFieldSelect(string text)
     {
         isKeyboardVisible = true;
@@ -55,27 +53,6 @@ public class UserForm : MonoBehaviour
         {
             // Reset card panel position when keyboard is hidden
             cardRectTransform.anchoredPosition = originalCardPosition;
-        }
-    }
-
-    public void OnSubmitButtonClick()
-    {
-        string phoneNumber = numberField.text;
-
-        if (!string.IsNullOrEmpty(phoneNumber))
-        {
-            Debug.Log("OTP Sent successfully on your Registered Number.");
-            verificationPanel.SetActive(true);
-            LoginPanel.SetActive(false);
-            FormPanel.SetActive(false);
-
-            userNumber = phoneNumber;
-
-            verifyOTP.numberText.text = userNumber;
-        }
-        else
-        {
-            Debug.Log("Please enter a valid mobile number!");
         }
     }
 }

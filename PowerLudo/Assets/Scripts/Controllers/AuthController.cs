@@ -1,18 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class AuthController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public VerificationController verificationController;
+    [SerializeField] private GameObject WelcomePanel;
+    [SerializeField] private GameObject AuthPanel;
+    [SerializeField] private GameObject VerificationPanel;
+    [SerializeField] private TMP_InputField numberField;
 
-    // Update is called once per frame
-    void Update()
+    // public string userNumber;
+
+    public void Start()
     {
-        
+        WelcomePanel.SetActive(true);
+        AuthPanel.SetActive(false);
+        VerificationPanel.SetActive(false);
+    }
+    public void OnSubmitButtonClick()
+    {
+        string phoneNumber = numberField.text;
+
+        if (!string.IsNullOrEmpty(phoneNumber))
+        {
+            Debug.Log("OTP Sent successfully on your Registered Number.");
+            VerificationPanel.SetActive(true);
+            WelcomePanel.SetActive(false);
+            AuthPanel.SetActive(false);
+
+            verificationController.numberText.text = "Hello: " + phoneNumber;
+        }
+        else
+        {
+            Debug.Log("Please enter a valid mobile number!");
+        }
     }
 }

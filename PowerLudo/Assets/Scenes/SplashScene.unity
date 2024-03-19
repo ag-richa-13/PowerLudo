@@ -664,11 +664,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 771620002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c76f94b204c754469b48a8d1cf7ee64, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bcd075da1988431581f87b1369c6fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LoadBar: {fileID: 584366641}
-  NextSceneIndex: 1
 --- !u!4 &771620004
 Transform:
   m_ObjectHideFlags: 0
@@ -1127,6 +1126,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 771620004}
   - {fileID: 1286064888}
   - {fileID: 728506906}
-  - {fileID: 771620004}
