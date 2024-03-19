@@ -102,7 +102,14 @@ public class VerificationController : MonoBehaviour
         AuthPanel.SetActive(true);
         VerificationPanel.SetActive(false);
         StartResendTimer();
+
+        // Clear the text of all OTP input fields
+        foreach (TMP_InputField inputField in otpInputFields)
+        {
+            inputField.text = "";
+        }
     }
+
 
     public void ResendOTP()
     {
@@ -124,8 +131,18 @@ public class VerificationController : MonoBehaviour
         // Find the index of the current input field
         int currentIndex = System.Array.IndexOf(otpInputFields, currentInputField);
 
+        // If the current input field is not the first one and its length becomes zero, move focus to the previous input field
+        if (currentIndex > 0 && currentInputField.text.Length == 0)
+        {
+            TMP_InputField previousInputField = otpInputFields[currentIndex - 1];
+            previousInputField.Select();
+            previousInputField.ActivateInputField();
+
+            // Deselect the current input field to prevent the keyboard from opening automatically
+            currentInputField.DeactivateInputField();
+        }
         // If the current input field is not the last one and its length is equal to 1, move focus to the next input field
-        if (currentIndex < otpInputFields.Length - 1 && currentInputField.text.Length == 1)
+        else if (currentIndex < otpInputFields.Length - 1 && currentInputField.text.Length == 1)
         {
             TMP_InputField nextInputField = otpInputFields[currentIndex + 1];
             nextInputField.Select();
@@ -135,5 +152,6 @@ public class VerificationController : MonoBehaviour
             currentInputField.DeactivateInputField();
         }
     }
-
 }
+
+
