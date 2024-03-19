@@ -22,7 +22,7 @@ public class VerificationController : MonoBehaviour
         AuthPanel.SetActive(false);
         VerificationPanel.SetActive(false);
     }
-    
+
     public void OnVerifyButtonClick()
     {
         // Concatenate OTP from input fields
