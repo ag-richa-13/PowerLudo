@@ -35,7 +35,20 @@ public class VeriFicationUIManager : MonoBehaviour
         isKeyboardVisible = false;
         AdjustCardPosition();
     }
-
+    private void Update()
+    {
+        // Check for Android back button press
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isKeyboardVisible)
+            {
+                // Close the keyboard
+                TouchScreenKeyboard.hideInput = true;
+                isKeyboardVisible = false;
+                AdjustCardPosition();
+            }
+        }
+    }
     private void AdjustCardPosition()
     {
         if (isKeyboardVisible)

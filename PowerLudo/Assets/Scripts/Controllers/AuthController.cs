@@ -32,6 +32,7 @@ public class AuthController : MonoBehaviour
             AuthPanel.SetActive(false);
 
             verificationController.numberText.text = phoneNumber;
+            verificationController.StartResendTimer();
         }
         else
         {

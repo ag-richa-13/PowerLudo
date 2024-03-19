@@ -12,15 +12,53 @@ public class VerificationController : MonoBehaviour
     [SerializeField] private GameObject VerificationPanel;
     [SerializeField] private TMP_InputField[] otpInputFields;
     public TMP_Text numberText;
+    [SerializeField] private TMP_Text timerText;
+    [SerializeField] private TMP_Text secText;
+    [SerializeField] private TMP_Text ResendButton;
     private int NextSceneIndex = 2;
 
     private const int OTP_LENGTH = 6; // Length of OTP
+    private const float MAX_TIMER_DURATION = 60f; // Maximum duration of the timer
+    private float currentTimer = MAX_TIMER_DURATION;
+    private bool isTimerRunning = false;
 
-    public void Start()
+    private void Start()
     {
         WelcomePanel.SetActive(true);
         AuthPanel.SetActive(false);
         VerificationPanel.SetActive(false);
+        // timerText.gameObject.SetActive(false); // Hide timer text initially
+        // secText.gameObject.SetActive(false);
+        // ResendButton.gameObject.SetActive(false); // Hide resend button initially
+    }
+
+    private void Update()
+    {
+        if (isTimerRunning)
+        {
+            currentTimer -= Time.deltaTime;
+            UpdateTimerText();
+
+            if (currentTimer <= 0)
+            {
+                isTimerRunning = false;
+                ShowResendButton();
+            }
+        }
+    }
+
+    private void UpdateTimerText()
+    {
+        int seconds = Mathf.CeilToInt(currentTimer);
+        timerText.text = seconds.ToString();
+        secText.text = "Sec";
+    }
+
+    private void ShowResendButton()
+    {
+        ResendButton.gameObject.SetActive(true);
+        timerText.gameObject.SetActive(false);
+        secText.gameObject.SetActive(false);
     }
 
     public void OnVerifyButtonClick()
@@ -47,6 +85,7 @@ public class VerificationController : MonoBehaviour
             {
                 Debug.Log("Incorrect OTP! Please try again.");
                 // Optionally, you can clear the input fields here for the user to enter OTP again
+                StartResendTimer();
             }
         }
         else
@@ -60,5 +99,21 @@ public class VerificationController : MonoBehaviour
         WelcomePanel.SetActive(false);
         AuthPanel.SetActive(true);
         VerificationPanel.SetActive(false);
+        StartResendTimer();
+    }
+
+    public void ResendOTP()
+    {
+        StartResendTimer();
+        ResendButton.gameObject.SetActive(false);
+        timerText.gameObject.SetActive(true);
+        secText.gameObject.SetActive(true);
+    }
+
+    public void StartResendTimer()
+    {
+        currentTimer = MAX_TIMER_DURATION;
+        isTimerRunning = true;
+        UpdateTimerText();
     }
 }
