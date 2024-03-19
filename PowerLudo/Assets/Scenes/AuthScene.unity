@@ -559,6 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1456b19d17e43e5928ed5c69041040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verificationController: {fileID: 0}
   WelcomePanel: {fileID: 306478361}
   AuthPanel: {fileID: 1869966483}
   VerificationPanel: {fileID: 1966904366}
@@ -2884,7 +2885,7 @@ GameObject:
   - component: {fileID: 739865896}
   - component: {fileID: 739865895}
   m_Layer: 5
-  m_Name: Phone text
+  m_Name: NumberText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

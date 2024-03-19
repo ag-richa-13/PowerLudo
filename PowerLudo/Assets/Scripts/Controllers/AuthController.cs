@@ -31,7 +31,7 @@ public class AuthController : MonoBehaviour
             WelcomePanel.SetActive(false);
             AuthPanel.SetActive(false);
 
-            verificationController.numberText.text = "Hello: " + phoneNumber;
+            verificationController.numberText.text = $"{phoneNumber}";
         }
         else
         {
