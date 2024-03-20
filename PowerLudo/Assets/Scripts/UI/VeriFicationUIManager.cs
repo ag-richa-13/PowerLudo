@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class VeriFicationUIManager : MonoBehaviour
+public class VerificationUIManager : MonoBehaviour
 {
     [SerializeField] private TMP_InputField[] otpInputFields;
     [SerializeField] private RectTransform cardRectTransform;

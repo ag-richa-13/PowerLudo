@@ -152,6 +152,6 @@ public class VerificationController : MonoBehaviour
             currentInputField.DeactivateInputField();
         }
     }
+
+
 }
-
-
