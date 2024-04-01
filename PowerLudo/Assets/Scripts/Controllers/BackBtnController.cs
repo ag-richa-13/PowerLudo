@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BackBtnController : MonoBehaviour
 {
+    public AuthUIManager authUIManager;
+    public VerificationUIManager verificationUIManager;
+    public VerificationController verificationController;
+    public AuthController authController;
     [SerializeField] private GameObject WelcomePanel;
     [SerializeField] private GameObject AuthPanel;
     [SerializeField] private GameObject VerificationPanel;
@@ -25,13 +30,20 @@ public class BackBtnController : MonoBehaviour
                 // AuthPanel ko disable karein aur WelcomePanel ko enable karein
                 AuthPanel.SetActive(false);
                 WelcomePanel.SetActive(true);
+                authController.numberField.text = "";
+
             }
             // Check karein agar user VerificationPanel se back karna chahta hai
             else if (VerificationPanel.activeSelf)
             {
                 // VerificationPanel ko disable karein aur AuthPanel ko enable karein
+                verificationUIManager.lastEnteredString = "";
                 VerificationPanel.SetActive(false);
                 AuthPanel.SetActive(true);
+                foreach (TMP_InputField inputField in verificationController.otpInputFields)
+                {
+                    inputField.text = "";
+                }
             }
         }
     }

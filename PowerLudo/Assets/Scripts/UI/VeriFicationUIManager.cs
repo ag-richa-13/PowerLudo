@@ -5,53 +5,61 @@ using TMPro;
 
 public class VerificationUIManager : MonoBehaviour
 {
+    public VerificationController verificationController;
     [SerializeField] private TMP_InputField[] otpInputFields;
     [SerializeField] private RectTransform cardRectTransform;
-    private bool isKeyboardVisible = false;
     private Vector2 originalCardPosition;
+    public TouchScreenKeyboard keyboard;
+    private int maxCharacterLimit = 6;
+    private int currentInputIndex = 0; // Track the current input index
+    public string lastEnteredString = ""; // Track last entered string
+
     private void Start()
     {
         // Store the original position of the card
         originalCardPosition = cardRectTransform.anchoredPosition;
 
-        // Set keyboard type for each input field in the array
         foreach (TMP_InputField inputField in otpInputFields)
         {
-            inputField.keyboardType = TouchScreenKeyboardType.NumberPad;
-
             // Subscribe to input field events
-            inputField.onSelect.AddListener(OnInputFieldSelect);
-            inputField.onDeselect.AddListener(OnInputFieldDeselect);
+            inputField.onSelect.AddListener((string text) => OnSelectInputField(inputField)); // Use lambda to capture inputField
         }
     }
-    private void OnInputFieldSelect(string text)
+
+    public void OnSelectInputField(TMP_InputField selectedInputField)
     {
-        isKeyboardVisible = true;
-        AdjustCardPosition();
+        // Open the keyboard with the specified character limit
+        keyboard = TouchScreenKeyboard.Open(lastEnteredString, TouchScreenKeyboardType.NumberPad, false, false, false, false, "", maxCharacterLimit);
+        // Ensure the caret is at the end of the text
+        selectedInputField.MoveTextEnd(false);
+
+        // Update the currentInputIndex only if the selected input field was empty
+        currentInputIndex = System.Array.IndexOf(otpInputFields, selectedInputField);
+
+        // Reset last entered string to empty when input field is selected
+        lastEnteredString = "";
+
+        //Hide Mobile Input Screen
+        TouchScreenKeyboard.hideInput = true;
     }
 
-    private void OnInputFieldDeselect(string text)
-    {
-        isKeyboardVisible = false;
-        AdjustCardPosition();
-    }
+
     private void Update()
     {
-        // Check for Android back button press
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (keyboard != null && keyboard.active)
         {
-            if (isKeyboardVisible)
-            {
-                // Close the keyboard
-                TouchScreenKeyboard.hideInput = true;
-                isKeyboardVisible = false;
-                AdjustCardPosition();
-            }
+            AdjustCardPosition();
+            OnKeyboardClick();
+        }
+        else
+        {
+            ResetCardPosition();
         }
     }
+
     private void AdjustCardPosition()
     {
-        if (isKeyboardVisible)
+        if (keyboard != null)
         {
             // Get the height of the keyboard
             float keyboardHeight = TouchScreenKeyboard.area.height;
@@ -62,10 +70,38 @@ public class VerificationUIManager : MonoBehaviour
             // Set the position of the card panel
             cardRectTransform.anchoredPosition = new Vector2(cardRectTransform.anchoredPosition.x, originalCardPosition.y + shiftAmount);
         }
-        else
+    }
+
+    private void ResetCardPosition()
+    {
+        cardRectTransform.anchoredPosition = originalCardPosition;
+    }
+
+    public void OnKeyboardClick()
+    {
+        string keyboardInput = keyboard.text;
+
+        for (int i = 0; i < otpInputFields.Length; i++)
         {
-            // Reset card panel position when keyboard is hidden
-            cardRectTransform.anchoredPosition = originalCardPosition;
+            if (i < keyboardInput.Length)
+            {
+                // Update corresponding input field with character from keyboard input
+                otpInputFields[i].text = keyboardInput[i].ToString();
+            }
+            else
+            {
+                // Clear remaining input fields if characters are less than max limit
+                otpInputFields[i].text = "";
+            }
         }
+
+        // Move to the next input field after filling the current one
+        if (keyboard.status == TouchScreenKeyboard.Status.Done)
+        {
+            verificationController.OnVerifyButtonClick();
+        }
+
+        // Update last entered string
+        lastEnteredString = keyboardInput;
     }
 }

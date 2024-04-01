@@ -284,7 +284,7 @@ MonoBehaviour:
   m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 1
-  m_HideSoftKeyboard: 0
+  m_HideSoftKeyboard: 1
   m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 30
@@ -334,9 +334,9 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
-  m_OnFocusSelectAll: 1
+  m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
-  m_RestoreOriginalTextOnEscape: 1
+  m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
@@ -938,8 +938,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 1
-  m_HideSoftKeyboard: 0
+  m_HideSoftKeyboard: 1
   m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 30
@@ -1169,9 +1169,9 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
-  m_OnFocusSelectAll: 1
+  m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
-  m_RestoreOriginalTextOnEscape: 1
+  m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
@@ -1257,11 +1257,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1456b19d17e43e5928ed5c69041040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authUIManager: {fileID: 303335932}
+  verificationUIManager: {fileID: 738740378}
   verificationController: {fileID: 1503095263}
   WelcomePanel: {fileID: 306478361}
   AuthPanel: {fileID: 1869966483}
   VerificationPanel: {fileID: 1966904366}
+  errorPanel: {fileID: 1583234505}
+  successPanel: {fileID: 1794455896}
+  SubmitButton: {fileID: 1984323973}
+  originalColor: {fileID: 21300000, guid: df67290f0978f2241a3deea658a1cfa2, type: 3}
+  transparentColor: {fileID: 21300000, guid: 281a0684b81518a40b85f888a15f5e03, type: 3}
   numberField: {fileID: 1339352375}
+  numberLimit: 10
+  userNumber: 
+  errorText: {fileID: 778271938}
+  successText: {fileID: 128291960}
+  popupDuration: 3
 --- !u!1 &271825081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,6 +1504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1f9e243fa3248de9ef9970941e46b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authController: {fileID: 203848895}
   numberField: {fileID: 1339352375}
   cardRectTransform: {fileID: 52481654}
 --- !u!1 &306478361
@@ -1511,7 +1524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &306478362
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3109,7 +3122,7 @@ MonoBehaviour:
   m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 1
-  m_HideSoftKeyboard: 0
+  m_HideSoftKeyboard: 1
   m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 30
@@ -3147,9 +3160,9 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
-  m_OnFocusSelectAll: 1
+  m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
-  m_RestoreOriginalTextOnEscape: 1
+  m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
@@ -3284,7 +3297,7 @@ MonoBehaviour:
   m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 1
-  m_HideSoftKeyboard: 0
+  m_HideSoftKeyboard: 1
   m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 30
@@ -3322,9 +3335,9 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
-  m_OnFocusSelectAll: 1
+  m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
-  m_RestoreOriginalTextOnEscape: 1
+  m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
@@ -3410,6 +3423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd55a3b1dcaaf744b8c350f3edf8b36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verificationController: {fileID: 1503095263}
   otpInputFields:
   - {fileID: 162340792}
   - {fileID: 9699972}
@@ -3418,6 +3432,7 @@ MonoBehaviour:
   - {fileID: 1331048459}
   - {fileID: 604701425}
   cardRectTransform: {fileID: 1355026756}
+  lastEnteredString: 
 --- !u!1 &739865893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,7 +3490,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9571006436
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
   m_sharedMaterial: {fileID: -7671727356936485701, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
@@ -3844,8 +3859,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4397,7 +4412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sec
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
   m_sharedMaterial: {fileID: -7671727356936485701, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
@@ -4649,6 +4664,100 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -60, y: -71}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &970440280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 970440283}
+  - component: {fileID: 970440282}
+  - component: {fileID: 970440281}
+  m_Layer: 0
+  m_Name: Reporter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &970440281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970440280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6767a180de870304caa2013b2772dd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &970440282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970440280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 600c02144c4813244abd262cbcbe8825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  show: 0
+  UserData: 
+  fps: 0
+  fpsText: 
+  images:
+    clearImage: {fileID: 2800000, guid: 112c6fcf56e349449ab2e6ad76b67816, type: 3}
+    collapseImage: {fileID: 2800000, guid: 4623f326a884a2546ab39078bf7822c3, type: 3}
+    clearOnNewSceneImage: {fileID: 2800000, guid: 3a6bc61a8319b1949ab9f1f2db1302b4, type: 3}
+    showTimeImage: {fileID: 2800000, guid: 782e03669fa4a614e89ef56252134250, type: 3}
+    showSceneImage: {fileID: 2800000, guid: ff4dfb29f203a174ab8e4c498afe908a, type: 3}
+    userImage: {fileID: 2800000, guid: 2bcdc012e7356f1449ce7d3a31dc458c, type: 3}
+    showMemoryImage: {fileID: 2800000, guid: f447d62f2dacf9843be7cbf168a3a9d0, type: 3}
+    softwareImage: {fileID: 2800000, guid: 6c91fc88ee6c791468318d85febfb48d, type: 3}
+    dateImage: {fileID: 2800000, guid: a7561cd0a9f62a84e99bff1abce2a222, type: 3}
+    showFpsImage: {fileID: 2800000, guid: 90b2f48155dc0e74f8e428561ac79da5, type: 3}
+    infoImage: {fileID: 2800000, guid: 2954bef266e6d794aba08ceacc887a0f, type: 3}
+    saveLogsImage: {fileID: 2800000, guid: 4a4821d80a1fc774fb76eac6213544e7, type: 3}
+    searchImage: {fileID: 2800000, guid: bfef37b5a26d2264798616d960451329, type: 3}
+    copyImage: {fileID: 2800000, guid: 7f36d71624c630046b855909c497be17, type: 3}
+    closeImage: {fileID: 2800000, guid: b65e9be99974bc94eab5d6698811d0b8, type: 3}
+    buildFromImage: {fileID: 2800000, guid: 8702be598dd9f504ca33be2afee2ca33, type: 3}
+    systemInfoImage: {fileID: 2800000, guid: e9011b1dc9256ad4d9c19a31c595f95f, type: 3}
+    graphicsInfoImage: {fileID: 2800000, guid: 999d31716332cc04eb4abc9c9270b0ca, type: 3}
+    backImage: {fileID: 2800000, guid: a0632a18e7c665641b94fea66506ab50, type: 3}
+    logImage: {fileID: 2800000, guid: e876b803a4dd5c5488078071d15aa9c0, type: 3}
+    warningImage: {fileID: 2800000, guid: 1066be8e7b994b94c8a182b8dbe30705, type: 3}
+    errorImage: {fileID: 2800000, guid: 7640ebf8b3a92124d821d3b4b8b3fd7e, type: 3}
+    barImage: {fileID: 2800000, guid: 8128d4f4c0193e34586f9631ef7d4787, type: 3}
+    button_activeImage: {fileID: 2800000, guid: 2580a2e903691e44282e56ed6e0ff37a, type: 3}
+    even_logImage: {fileID: 2800000, guid: d27aad55b568c6544b0b95a95da44bc7, type: 3}
+    odd_logImage: {fileID: 2800000, guid: 8ffbb44a2c3adae45913474e4fd487f5, type: 3}
+    selectedImage: {fileID: 2800000, guid: 17117a429b08e7e43b0b6c8421de69fe, type: 3}
+    reporterScrollerSkin: {fileID: 11400000, guid: 1cc68832d00d3284a9324a4dc05be753, type: 2}
+  size: {x: 32, y: 32}
+  maxSize: 20
+  numOfCircleToShow: 1
+  Initialized: 0
+--- !u!4 &970440283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970440280}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &982861713
 GameObject:
   m_ObjectHideFlags: 0
@@ -5324,7 +5433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 60
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
   m_sharedMaterial: {fileID: -7671727356936485701, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
@@ -5649,7 +5758,7 @@ MonoBehaviour:
   m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 1
-  m_HideSoftKeyboard: 0
+  m_HideSoftKeyboard: 1
   m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 30
@@ -5687,9 +5796,9 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
-  m_OnFocusSelectAll: 1
+  m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
-  m_RestoreOriginalTextOnEscape: 1
+  m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
@@ -5899,7 +6008,7 @@ MonoBehaviour:
   m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 1
-  m_HideSoftKeyboard: 0
+  m_HideSoftKeyboard: 1
   m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 30
@@ -5937,9 +6046,9 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
-  m_OnFocusSelectAll: 1
+  m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
-  m_RestoreOriginalTextOnEscape: 1
+  m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
@@ -6112,9 +6221,9 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: edc04d90cca307f4c89d226b1727c904, type: 2}
-  m_OnFocusSelectAll: 1
+  m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
-  m_RestoreOriginalTextOnEscape: 1
+  m_RestoreOriginalTextOnEscape: 0
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
@@ -6688,6 +6797,7 @@ Transform:
   - {fileID: 1434995745}
   - {fileID: 203848894}
   - {fileID: 1503095262}
+  - {fileID: 1842527134}
   m_Father: {fileID: 342917976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1434995744
@@ -6734,6 +6844,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9198f9609a7bbb642b80bbbef177d198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authUIManager: {fileID: 303335932}
+  verificationUIManager: {fileID: 738740378}
+  verificationController: {fileID: 1503095263}
+  authController: {fileID: 203848895}
   WelcomePanel: {fileID: 306478361}
   AuthPanel: {fileID: 1869966483}
   VerificationPanel: {fileID: 1966904366}
@@ -6856,9 +6970,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb94451dc3e18cd448193d5ee645065f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authUIManager: {fileID: 303335932}
+  verificationUIManager: {fileID: 738740378}
   WelcomePanel: {fileID: 306478361}
   AuthPanel: {fileID: 1869966483}
   VerificationPanel: {fileID: 1966904366}
+  errorPanel: {fileID: 1583234505}
+  successPanel: {fileID: 1794455896}
   otpInputFields:
   - {fileID: 162340792}
   - {fileID: 9699972}
@@ -6867,9 +6985,14 @@ MonoBehaviour:
   - {fileID: 1331048459}
   - {fileID: 604701425}
   numberText: {fileID: 739865895}
+  originalColor: {fileID: 21300000, guid: df67290f0978f2241a3deea658a1cfa2, type: 3}
+  transparentColor: {fileID: 21300000, guid: 281a0684b81518a40b85f888a15f5e03, type: 3}
+  VerifyButton: {fileID: 1984323973}
   timerText: {fileID: 1255638985}
   secText: {fileID: 875665691}
   ResendButton: {fileID: 50724264}
+  errorText: {fileID: 778271938}
+  successrText: {fileID: 128291960}
 --- !u!1 &1521430546
 GameObject:
   m_ObjectHideFlags: 0
@@ -7092,7 +7215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1583234506
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7110,7 +7233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -229, y: 50}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 564, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583234507
@@ -7884,10 +8007,22 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1690650678}
+  m_TargetGraphic: {fileID: 1906741712}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1842527135}
+        m_TargetAssemblyTypeName: PrivacyWebView, Assembly-CSharp
+        m_MethodName: OnClickPrivacyButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1690650678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8216,9 +8351,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc164930fed30e45bf2f05c2fe09249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authUIManager: {fileID: 303335932}
+  authController: {fileID: 203848895}
   WelcomePanel: {fileID: 306478361}
   AuthPanel: {fileID: 1869966483}
   VerificationPanel: {fileID: 1966904366}
+  errorPanel: {fileID: 1583234505}
+  successPanel: {fileID: 1794455896}
 --- !u!1 &1784973875
 GameObject:
   m_ObjectHideFlags: 0
@@ -8370,7 +8509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1794455897
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8386,9 +8525,9 @@ RectTransform:
   - {fileID: 128291959}
   m_Father: {fileID: 1596643914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 282, y: 50}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 564, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1794455898
@@ -8429,6 +8568,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794455896}
   m_CullTransparentMesh: 1
+--- !u!1 &1842527133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1842527134}
+  - component: {fileID: 1842527135}
+  - component: {fileID: 1842527136}
+  m_Layer: 0
+  m_Name: WebViewController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1842527134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842527133}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1412482764}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1842527135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842527133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0848d4ef2d009458d319c7f35417c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AuthPanel: {fileID: 1869966483}
+  WebViewPanel: {fileID: 0}
+  loader: {fileID: 0}
+--- !u!114 &1842527136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842527133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24d864e47801444d852cfbbc516a97c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1849924085
 GameObject:
   m_ObjectHideFlags: 0
@@ -8714,7 +8913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1869966484
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9013,7 +9212,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1906741712}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1842527136}
+        m_TargetAssemblyTypeName: TAndCWebView, Assembly-CSharp
+        m_MethodName: OnClickTandCButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1906741712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10087,3 +10298,4 @@ SceneRoots:
   - {fileID: 463599877}
   - {fileID: 2079376570}
   - {fileID: 1938663803}
+  - {fileID: 970440283}

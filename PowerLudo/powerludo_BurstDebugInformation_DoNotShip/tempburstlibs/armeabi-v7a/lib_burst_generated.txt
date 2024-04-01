@@ -1,4 +1,4 @@
-Library: /Users/mt11-1060/Documents/GitHub/PowerLudo/PowerLudo/Temp/BurstOutput/tempburstlibs/armeabi-v7a/lib_burst_generated
+Library: E:\GitHub\PowerLudo\PowerLudo\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-16
 --target=ARMV7A_NEON32
@@ -14,15 +14,18 @@ Library: /Users/mt11-1060/Documents/GitHub/PowerLudo/PowerLudo/Temp/BurstOutput/
 --assembly-defines=Unity.VisualScripting.Core;
 --assembly-defines=Unity.2D.Animation.Runtime;
 --assembly-defines=Unity.2D.Tilemap.Extras;
+--assembly-defines=gpm_webview;
 --assembly-defines=Unity.VisualScripting.Flow;
 --assembly-defines=Unity.InternalAPIEngineBridge.001;
 --assembly-defines=Unity.2D.Common.Runtime;
 --assembly-defines=Unity.Timeline;
+--assembly-defines=gpm_common;
 --assembly-defines=Unity.Collections;
 --assembly-defines=Unity.2D.SpriteShape.Runtime;
 --assembly-defines=Unity.2D.PixelPerfect;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.TextMeshPro;
+--assembly-defines=gpm_communicator;
 --assembly-defines=Unity.VisualScripting.State;
 --assembly-defines=Unity.Collections.LowLevel.ILSupport;
 --assembly-defines=Unity.VisualScripting.Antlr3.Runtime;
@@ -49,11 +52,11 @@ Library: /Users/mt11-1060/Documents/GitHub/PowerLudo/PowerLudo/Temp/BurstOutput/
 --assembly-defines=System.Xml;
 --assembly-defines=System;
 --assembly-defines=mscorlib;
---generate-link-xml=Temp/burst.link.xml
---temp-folder=/Users/mt11-1060/Documents/GitHub/PowerLudo/PowerLudo/Temp/Burst
---key-folder=/Applications/Unity/Hub/Editor/2022.3.20f1/PlaybackEngines/AndroidPlayer
---decode-folder=/Users/mt11-1060/Documents/GitHub/PowerLudo/PowerLudo/Library/Burst
---output=/Users/mt11-1060/Documents/GitHub/PowerLudo/PowerLudo/Temp/BurstOutput/tempburstlibs/armeabi-v7a/lib_burst_generated
+--generate-link-xml=Temp\burst.link.xml
+--temp-folder=E:\GitHub\PowerLudo\PowerLudo\Temp\Burst
+--key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.20f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--decode-folder=E:\GitHub\PowerLudo\PowerLudo\Library\Burst
+--output=E:\GitHub\PowerLudo\PowerLudo\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
