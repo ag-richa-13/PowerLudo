@@ -414,8 +414,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1375491038}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &310578012
@@ -2994,6 +2993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1375491038}
   - component: {fileID: 1375491039}
+  - component: {fileID: 1375491040}
   m_Layer: 0
   m_Name: HomeManager
   m_TagString: Untagged
@@ -3009,12 +3009,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375491037}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 253967209}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1375491039
 MonoBehaviour:
@@ -3030,6 +3030,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HomePanel: {fileID: 415735366}
   MoreInfoPanel: {fileID: 1845233474}
+--- !u!114 &1375491040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375491037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ce52ec940c84ad8845382c26c4f1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HomePanel: {fileID: 0}
+  MoreInfoPanel: {fileID: 0}
+  MiniWalletPanel: {fileID: 0}
+  buttons: []
 --- !u!1 &1388775254
 GameObject:
   m_ObjectHideFlags: 0
@@ -5431,3 +5447,4 @@ SceneRoots:
   - {fileID: 384072693}
   - {fileID: 1314956457}
   - {fileID: 253967209}
+  - {fileID: 1375491038}
