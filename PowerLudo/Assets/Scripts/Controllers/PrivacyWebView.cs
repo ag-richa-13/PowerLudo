@@ -62,7 +62,13 @@ public class PrivacyWebView : MonoBehaviour
                 isBackButtonVisible = true,
                 isForwardButtonVisible = true,
                 isCloseButtonVisible = true,
+                margins = new GpmWebViewRequest.Margins
+                {
+                    hasValue = true,
+                    top = (int)(Screen.height * 0.1f),
+                },
                 supportMultipleWindows = true,
+
 #if UNITY_IOS
             contentMode = GpmWebViewContentMode.MOBILE
 #endif

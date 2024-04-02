@@ -349,6 +349,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204818505}
   m_CullTransparentMesh: 1
+--- !u!114 &222849148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1590046044452966019, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
+  m_PrefabInstance: {fileID: 1080051296684258507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &253967206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,7 +2578,7 @@ GameObject:
   - component: {fileID: 1229139726}
   - component: {fileID: 1229139725}
   m_Layer: 5
-  m_Name: ButtonArrow
+  m_Name: Dropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2636,7 +2647,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1229139726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1375491040}
+        m_TargetAssemblyTypeName: HomeSceneController, Assembly-CSharp
+        m_MethodName: OnClickDropdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1229139726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3063,6 +3086,7 @@ MonoBehaviour:
   - {fileID: 2094719611}
   - {fileID: 1794793263}
   - {fileID: 1388775256}
+  - {fileID: 222849148}
 --- !u!1 &1388775254
 GameObject:
   m_ObjectHideFlags: 0
@@ -4894,6 +4918,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2000287676}
     m_Modifications:
+    - target: {fileID: 949347312362912503, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
+      propertyPath: m_Name
+      value: MiniButttonWallet
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590046044452966019, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590046044452966019, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590046044452966019, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1375491040}
+    - target: {fileID: 1590046044452966019, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590046044452966019, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnclickMiniWalletButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590046044452966019, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HomeSceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590046044452966019, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2614759950286888306, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -50

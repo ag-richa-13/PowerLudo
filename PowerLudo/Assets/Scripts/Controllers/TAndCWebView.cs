@@ -44,31 +44,33 @@ public class TAndCWebView : MonoBehaviour
     public void OnClickTandCButton()
     {
         GpmWebView.ShowUrl(
-            "https://google.com/",
-            new GpmWebViewRequest.Configuration()
+        "https://google.com/",
+        new GpmWebViewRequest.Configuration()
+        {
+            style = GpmWebViewStyle.POPUP,
+            orientation = GpmOrientation.UNSPECIFIED,
+            isClearCookie = true,
+            isClearCache = true,
+            isNavigationBarVisible = true,
+            isCloseButtonVisible = true,
+            position = new GpmWebViewRequest.Position
             {
-                style = GpmWebViewStyle.FULLSCREEN,
-                orientation = GpmOrientation.UNSPECIFIED,
-                isClearCookie = true,
-                isClearCache = true,
-                backgroundColor = "#ffffff",
-                isNavigationBarVisible = true,
-                navigationBarColor = "#4B96E6",
-                title = "The page title.",
-                isBackButtonVisible = true,
-                isForwardButtonVisible = true,
-                isCloseButtonVisible = true,
-                supportMultipleWindows = true,
-#if UNITY_IOS
-            contentMode = GpmWebViewContentMode.MOBILE
-#endif
+                hasValue = true,
+                x = (int)(Screen.width * 0),
+                y = (int)(Screen.height * 0.2f)
             },
-            // See the end of the code example
-            OnCallback,
-            new List<string>()
+            size = new GpmWebViewRequest.Size
             {
-            "USER_ CUSTOM_SCHEME"
-            });
+                hasValue = true,
+                width = (int)(Screen.width * 1f),
+                height = (int)(Screen.height * 1f)
+            },
+            supportMultipleWindows = true,
+#if UNITY_IOS
+            contentMode = GpmWebViewContentMode.MOBILE,
+            isMaskViewVisible = true,
+#endif
+        }, null, null);
     }
 
 
