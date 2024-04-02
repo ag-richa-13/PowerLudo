@@ -5331,6 +5331,34 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 3507857492981568049, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507857492981568049, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507857492981568049, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1375491040}
+    - target: {fileID: 3507857492981568049, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507857492981568049, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickHomeButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507857492981568049, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HomeSceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507857492981568049, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3790899261789215964, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
       propertyPath: m_SizeDelta.x
       value: 37
@@ -5366,6 +5394,62 @@ PrefabInstance:
     - target: {fileID: 6773994982773332168, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
       propertyPath: m_Transition
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773994982773332168, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773994982773332168, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773994982773332168, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1375491040}
+    - target: {fileID: 6773994982773332168, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773994982773332168, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickWalletButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773994982773332168, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HomeSceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773994982773332168, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446824006635074438, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446824006635074438, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446824006635074438, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1375491040}
+    - target: {fileID: 7446824006635074438, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446824006635074438, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickMoreButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446824006635074438, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HomeSceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446824006635074438, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7497523388998073591, guid: c5655b81ea96f44749ffcf46d52fa439, type: 3}
       propertyPath: m_AnchorMax.x
