@@ -8,6 +8,7 @@ public class HomeSceneController : MonoBehaviour
     [SerializeField] private GameObject HomePanel;
     [SerializeField] private GameObject MoreInfoPanel;
     [SerializeField] private GameObject MiniWalletPanel;
+    [SerializeField] private GameObject WalletPanel;
     public Button[] buttons;
     void Start()
     {
@@ -15,6 +16,7 @@ public class HomeSceneController : MonoBehaviour
         HomePanel.SetActive(true);
         MoreInfoPanel.SetActive(false);
         MiniWalletPanel.SetActive(false);
+
 
         buttons[3].gameObject.SetActive(true);
         buttons[0].gameObject.SetActive(true);
@@ -29,6 +31,8 @@ public class HomeSceneController : MonoBehaviour
         HomePanel.SetActive(false);
         MoreInfoPanel.SetActive(true);
         MiniWalletPanel.SetActive(false);
+        WalletPanel.SetActive(false);
+
 
         buttons[3].gameObject.SetActive(false);
         buttons[0].gameObject.SetActive(true);
@@ -45,6 +49,8 @@ public class HomeSceneController : MonoBehaviour
         HomePanel.SetActive(true);
         MoreInfoPanel.SetActive(false);
         MiniWalletPanel.SetActive(false);
+        WalletPanel.SetActive(false);
+
 
         buttons[3].gameObject.SetActive(true);
         buttons[0].gameObject.SetActive(true);
@@ -60,7 +66,8 @@ public class HomeSceneController : MonoBehaviour
     {
         HomePanel.SetActive(false);
         MoreInfoPanel.SetActive(false);
-        MiniWalletPanel.SetActive(true);
+        MiniWalletPanel.SetActive(false);
+        WalletPanel.SetActive(true);
 
         buttons[3].gameObject.SetActive(false);
         buttons[0].gameObject.SetActive(false);
@@ -68,7 +75,6 @@ public class HomeSceneController : MonoBehaviour
         buttons[1].gameObject.SetActive(true);
         buttons[5].gameObject.SetActive(false);
         buttons[2].gameObject.SetActive(true);
-        buttons[6].gameObject.SetActive(false);
 
     }
     public void OnclickMiniWalletButton()
@@ -76,6 +82,7 @@ public class HomeSceneController : MonoBehaviour
         if (HomePanel.activeSelf)
         {
             MoreInfoPanel.SetActive(false);
+            WalletPanel.SetActive(false);
             MiniWalletPanel.SetActive(true);
 
             buttons[3].gameObject.SetActive(true);
@@ -89,6 +96,7 @@ public class HomeSceneController : MonoBehaviour
         else if (MoreInfoPanel.activeSelf)
         {
             HomePanel.SetActive(false);
+            WalletPanel.SetActive(false);
             MiniWalletPanel.SetActive(true);
 
             buttons[3].gameObject.SetActive(false);
@@ -98,6 +106,14 @@ public class HomeSceneController : MonoBehaviour
             buttons[5].gameObject.SetActive(true);
             buttons[2].gameObject.SetActive(true);
             buttons[6].gameObject.SetActive(true);
+        }
+
+        else if (WalletPanel.activeSelf)
+        {
+            HomePanel.SetActive(false);
+            MoreInfoPanel.SetActive(false);
+            MiniWalletPanel.SetActive(true);
+
         }
     }
 
