@@ -62,7 +62,6 @@ public class PrivacyWebView : MonoBehaviour
                 isBackButtonVisible = true,
                 isForwardButtonVisible = true,
                 isCloseButtonVisible = true,
-                load
                 margins = new GpmWebViewRequest.Margins
                 {
                     hasValue = true,
