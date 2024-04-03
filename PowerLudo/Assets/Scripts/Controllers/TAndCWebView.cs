@@ -5,42 +5,6 @@ using Gpm.WebView;
 
 public class TAndCWebView : MonoBehaviour
 {
-
-    // public GameObject loadbar;
-
-    // float fillTime = 3f;
-    // private float timer = 0f;
-    // private bool isLoading = false;
-
-
-    // public void OnClickTandCButton()
-    // {
-
-    //     isLoading = true;
-    //     timer = 0f;
-    // }
-    // private void Update()
-    // {
-    //     if (isLoading)
-    //     {
-    //         Loadingbar();
-    //     }
-    // }
-    // private void Loadingbar()
-    // {
-    //     GameObject loader = Instantiate(LoaderPrefab, new Vector3(0, 0, 0));
-    //     timer += Time.deltaTime;
-
-    //     float progress = timer / fillTime;
-
-    //     loader.value = progress;
-
-    //     if (progress >= 1f)
-    //     {
-    //         isLoading = false;
-    //         OnLoadingFill();
-    //     }
-    // }
     public void OnClickTandCButton()
     {
         GpmWebView.ShowUrl(

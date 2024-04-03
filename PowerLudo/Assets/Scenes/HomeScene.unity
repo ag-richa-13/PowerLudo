@@ -4985,7 +4985,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 949347312362912503, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
       propertyPath: m_Name
-      value: MiniButttonWallet
+      value: MiniWalletButtton
       objectReference: {fileID: 0}
     - target: {fileID: 1590046044452966019, guid: 67e8c3827228144c7b7e6071e1df9b0a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
