@@ -24,7 +24,6 @@ public class HomeSceneController : MonoBehaviour
         buttons[1].gameObject.SetActive(false);
         buttons[5].gameObject.SetActive(false);
         buttons[2].gameObject.SetActive(false);
-        buttons[6].gameObject.SetActive(true);
     }
     public void OnClickMoreButton()
     {
@@ -40,7 +39,6 @@ public class HomeSceneController : MonoBehaviour
         buttons[1].gameObject.SetActive(false);
         buttons[5].gameObject.SetActive(true);
         buttons[2].gameObject.SetActive(true);
-        buttons[6].gameObject.SetActive(true);
     }
 
 
@@ -58,7 +56,6 @@ public class HomeSceneController : MonoBehaviour
         buttons[1].gameObject.SetActive(false);
         buttons[5].gameObject.SetActive(false);
         buttons[2].gameObject.SetActive(false);
-        buttons[6].gameObject.SetActive(true);
 
     }
 
@@ -91,7 +88,6 @@ public class HomeSceneController : MonoBehaviour
             buttons[1].gameObject.SetActive(false);
             buttons[5].gameObject.SetActive(false);
             buttons[2].gameObject.SetActive(false);
-            buttons[6].gameObject.SetActive(true);
         }
         else if (MoreInfoPanel.activeSelf)
         {
@@ -105,7 +101,6 @@ public class HomeSceneController : MonoBehaviour
             buttons[1].gameObject.SetActive(false);
             buttons[5].gameObject.SetActive(true);
             buttons[2].gameObject.SetActive(true);
-            buttons[6].gameObject.SetActive(true);
         }
 
         else if (WalletPanel.activeSelf)

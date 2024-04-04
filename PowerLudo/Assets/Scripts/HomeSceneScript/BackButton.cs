@@ -6,6 +6,7 @@ public class BackButton : MonoBehaviour
 {
     [SerializeField] private GameObject HomePanel;
     [SerializeField] private GameObject MoreInfoPanel;
+    [SerializeField] private GameObject WalletPanel;
 
     // Update is called once per frame
     void Update()
@@ -19,12 +20,12 @@ public class BackButton : MonoBehaviour
                 Application.Quit();
             }
 
-            else if (MoreInfoPanel.activeSelf)
+            else if (MoreInfoPanel.activeSelf || WalletPanel.activeSelf)
             {
 
                 MoreInfoPanel.SetActive(false);
                 HomePanel.SetActive(true);
-
+                WalletPanel.SetActive(false);
             }
         }
     }
