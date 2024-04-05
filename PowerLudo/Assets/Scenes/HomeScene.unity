@@ -3369,6 +3369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407ac2b7fa1d241f08b29d44dc5aeadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  homeSceneController: {fileID: 316565839}
   HomePanel: {fileID: 415735366}
   MoreInfoPanel: {fileID: 1845233474}
   WalletPanel: {fileID: 1608899925}
