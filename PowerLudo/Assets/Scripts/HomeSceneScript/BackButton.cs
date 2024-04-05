@@ -20,9 +20,15 @@ public class BackButton : MonoBehaviour
                 Application.Quit();
             }
 
-            else if (MoreInfoPanel.activeSelf || WalletPanel.activeSelf)
+            else if (MoreInfoPanel.activeSelf)
             {
 
+                MoreInfoPanel.SetActive(false);
+                HomePanel.SetActive(true);
+                WalletPanel.SetActive(false);
+            }
+            else if (WalletPanel.activeSelf)
+            {
                 MoreInfoPanel.SetActive(false);
                 HomePanel.SetActive(true);
                 WalletPanel.SetActive(false);
