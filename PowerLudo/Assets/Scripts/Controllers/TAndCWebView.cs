@@ -21,13 +21,21 @@ public class TAndCWebView : MonoBehaviour
             {
                 hasValue = true,
                 x = (int)(Screen.width * 0),
-                y = (int)(Screen.height * 0.2f)
+                y = (int)(Screen.height * 0f)
             },
             size = new GpmWebViewRequest.Size
             {
                 hasValue = true,
                 width = (int)(Screen.width * 1f),
                 height = (int)(Screen.height * 1f)
+            },
+            margins = new GpmWebViewRequest.Margins
+            {
+                hasValue = true,
+
+                top = (int)(Screen.height * 0.1f),
+
+                bottom = (int)(Screen.height * 0.1f)
             },
             supportMultipleWindows = true,
 #if UNITY_IOS
