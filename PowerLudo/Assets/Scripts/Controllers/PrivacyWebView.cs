@@ -6,79 +6,37 @@ using UnityEngine.UI;
 
 public class PrivacyWebView : MonoBehaviour
 {
-    //     [SerializeField] private GameObject AuthPanel;
-    //     [SerializeField] private GameObject WebViewPanel;
-    //     public Slider loader;
-    //     float fillTime = 3f;
-    //     private float timer = 0f;
-    //     private bool isLoading = false;
-
-    //     public void OnClickPrivacyButton()
-    //     {
-    //         AuthPanel.SetActive(false);
-    //         WebViewPanel.SetActive(true);
-
-    //         isLoading = true;
-    //         timer = 0f;
-    //     }
-
-    //     private void Update()
-    //     {
-    //         if (isLoading)
-    //         {
-    //             Loadingbar();
-    //         }
-    //     }
-
-    //     private void Loadingbar()
-    //     {
-    //         timer += Time.deltaTime;
-
-    //         float progress = timer / fillTime;
-
-    //         loader.value = progress;
-
-    //         if (progress >= 1f)
-    //         {
-    //             isLoading = false;
-    //             OnLoadingFill();
-    //         }
-    //     }
     // For Privacy Policy
     public void OnClickPrivacyButton()
     {
         GpmWebView.ShowUrl(
-            "https://google.com/",
-            new GpmWebViewRequest.Configuration()
+        "https://google.com/",
+        new GpmWebViewRequest.Configuration()
+        {
+            style = GpmWebViewStyle.POPUP,
+            orientation = GpmOrientation.UNSPECIFIED,
+            isClearCookie = true,
+            isClearCache = true,
+            isNavigationBarVisible = true,
+            isCloseButtonVisible = true,
+            position = new GpmWebViewRequest.Position
             {
-                style = GpmWebViewStyle.FULLSCREEN,
-                orientation = GpmOrientation.UNSPECIFIED,
-                isClearCookie = true,
-                isClearCache = true,
-                backgroundColor = "#000000",
-                isNavigationBarVisible = true,
-                navigationBarColor = "#4B96E6",
-                title = "The page title.",
-                isBackButtonVisible = true,
-                isForwardButtonVisible = true,
-                isCloseButtonVisible = true,
-                margins = new GpmWebViewRequest.Margins
-                {
-                    hasValue = true,
-                    top = (int)(Screen.height * 0.1f),
-                },
-                supportMultipleWindows = true,
-
-#if UNITY_IOS
-            contentMode = GpmWebViewContentMode.MOBILE
-#endif
+                hasValue = true,
+                x = (int)(Screen.width * 0.1f),
+                y = (int)(Screen.height * 0.1f)
             },
-            // See the end of the code example
-            OnCallback,
-            new List<string>()
+            size = new GpmWebViewRequest.Size
             {
-            "USER_ CUSTOM_SCHEME"
-            });
+                hasValue = true,
+                width = (int)(Screen.width * 0.8f),
+                height = (int)(Screen.height * 0.8f)
+            },
+            supportMultipleWindows = true,
+#if UNITY_IOS
+            contentMode = GpmWebViewContentMode.MOBILE,
+            isMaskViewVisible = true,
+#endif
+        }, null, null);
     }
 
 

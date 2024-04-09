@@ -16,6 +16,9 @@ public class TAndCWebView : MonoBehaviour
             isClearCookie = true,
             isClearCache = true,
             isNavigationBarVisible = true,
+            title = "Terms and Conditions",
+            isBackButtonVisible = true,
+            isForwardButtonVisible = true,
             isCloseButtonVisible = true,
             position = new GpmWebViewRequest.Position
             {
@@ -33,9 +36,9 @@ public class TAndCWebView : MonoBehaviour
             {
                 hasValue = true,
 
-                top = (int)(Screen.height * 0.1f),
+                top = (int)(Screen.height * 0.134f),
 
-                bottom = (int)(Screen.height * 0.1f)
+                bottom = (int)(Screen.height * 0.075f)
             },
             supportMultipleWindows = true,
 #if UNITY_IOS
