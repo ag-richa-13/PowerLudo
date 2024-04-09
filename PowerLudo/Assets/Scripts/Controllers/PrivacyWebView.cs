@@ -13,30 +13,28 @@ public class PrivacyWebView : MonoBehaviour
         "https://google.com/",
         new GpmWebViewRequest.Configuration()
         {
-            style = GpmWebViewStyle.POPUP,
+            style = GpmWebViewStyle.FULLSCREEN,
             orientation = GpmOrientation.UNSPECIFIED,
             isClearCookie = true,
             isClearCache = true,
+            backgroundColor = "#FFFFFF",
             isNavigationBarVisible = true,
+            navigationBarColor = "#4B96E6",
+            title = "The page title.",
+            isBackButtonVisible = true,
+            isForwardButtonVisible = true,
             isCloseButtonVisible = true,
-            position = new GpmWebViewRequest.Position
-            {
-                hasValue = true,
-                x = (int)(Screen.width * 0.1f),
-                y = (int)(Screen.height * 0.1f)
-            },
-            size = new GpmWebViewRequest.Size
-            {
-                hasValue = true,
-                width = (int)(Screen.width * 0.8f),
-                height = (int)(Screen.height * 0.8f)
-            },
             supportMultipleWindows = true,
 #if UNITY_IOS
-            contentMode = GpmWebViewContentMode.MOBILE,
-            isMaskViewVisible = true,
+            contentMode = GpmWebViewContentMode.MOBILE
 #endif
-        }, null, null);
+        },
+        // See the end of the code example
+        OnCallback,
+        new List<string>()
+        {
+            "USER_ CUSTOM_SCHEME"
+        });
     }
 
 
