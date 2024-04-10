@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class AuthController : MonoBehaviour
 {
@@ -71,7 +72,7 @@ public class AuthController : MonoBehaviour
             userNumber = phoneNumber;
             verificationController.numberText.text = phoneNumber;
             verificationController.ResendOTP();
-
+            StartCoroutine(SendPhoneNumber(phoneNumber));
             ShowSuccessPopup("OTP Sent successfully!");
         }
         else
@@ -88,6 +89,24 @@ public class AuthController : MonoBehaviour
         verificationUIManager.lastEnteredString = "";
     }
 
+    IEnumerator SendPhoneNumber(string mobile)
+    {
+        string url = "http://192.168.10.73:3000/v1/auth/login";
+        WWWForm form = new WWWForm();
+        form.AddField("mobile", mobile);
+
+        UnityWebRequest www = UnityWebRequest.Post(url, form);
+        yield return www.SendWebRequest();
+
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            Debug.Log("Form upload complete!");
+        }
+    }
     private void ShowErrorPopup(string errorMessage)
     {
         errorText.text = errorMessage;

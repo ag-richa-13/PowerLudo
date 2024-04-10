@@ -15,8 +15,8 @@ public class TAndCWebView : MonoBehaviour
             orientation = GpmOrientation.UNSPECIFIED,
             isClearCookie = true,
             isClearCache = true,
-            isNavigationBarVisible = true,
-            isCloseButtonVisible = true,
+            isNavigationBarVisible = false,
+            isCloseButtonVisible = false,
             position = new GpmWebViewRequest.Position
             {
                 hasValue = true,
