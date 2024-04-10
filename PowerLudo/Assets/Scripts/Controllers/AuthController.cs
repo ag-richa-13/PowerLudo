@@ -102,7 +102,7 @@ public class AuthController : MonoBehaviour
         {
             Debug.Log("API request failed: " + www.error);
             ShowErrorPopup("Failed to send OTP. Please check your internet connection.");
-            // Optionally, you can re-enable the submit button here if needed
+
         }
         else
         {
