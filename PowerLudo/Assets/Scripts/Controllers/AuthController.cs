@@ -64,16 +64,16 @@ public class AuthController : MonoBehaviour
 
         if (!string.IsNullOrEmpty(phoneNumber) && phoneNumber.Length == numberLimit)
         {
-            Debug.Log("OTP Sent successfully on your Registered Number.");
-            VerificationPanel.SetActive(true);
-            WelcomePanel.SetActive(false);
-            AuthPanel.SetActive(false);
+            // Debug.Log("OTP Sent successfully on your Registered Number.");
+            // VerificationPanel.SetActive(true);
+            // WelcomePanel.SetActive(false);
+            // AuthPanel.SetActive(false);
 
-            userNumber = phoneNumber;
-            verificationController.numberText.text = phoneNumber;
-            verificationController.ResendOTP();
+            // userNumber = phoneNumber;
+            // verificationController.numberText.text = phoneNumber;
+            // verificationController.ResendOTP();
             StartCoroutine(SendPhoneNumber(phoneNumber));
-            ShowSuccessPopup("OTP Sent successfully!");
+            // ShowSuccessPopup("OTP Sent successfully!");
         }
         else
         {
@@ -98,15 +98,27 @@ public class AuthController : MonoBehaviour
         UnityWebRequest www = UnityWebRequest.Post(url, form);
         yield return www.SendWebRequest();
 
-        if (www.result != UnityWebRequest.Result.Success)
+        if (www.result != UnityWebRequest.Result.Success || www.isHttpError || www.isNetworkError)
         {
-            Debug.Log(www.error);
+            Debug.Log("API request failed: " + www.error);
+            ShowErrorPopup("Failed to send OTP. Please check your internet connection.");
+            // Optionally, you can re-enable the submit button here if needed
         }
         else
         {
             Debug.Log("Form upload complete!");
+            Debug.Log("OTP Sent successfully on your Registered Number.");
+            VerificationPanel.SetActive(true);
+            WelcomePanel.SetActive(false);
+            AuthPanel.SetActive(false);
+
+            userNumber = mobile;
+            verificationController.numberText.text = mobile;
+            verificationController.ResendOTP();
+            ShowSuccessPopup("OTP Sent successfully!");
         }
     }
+
     private void ShowErrorPopup(string errorMessage)
     {
         errorText.text = errorMessage;
